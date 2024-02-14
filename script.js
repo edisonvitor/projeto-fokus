@@ -36,7 +36,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active');
     })
     html.setAttribute('data-contexto', contexto);
-    banner.setAttribute('src', `/imagens/${contexto}.png`);
+    banner.setAttribute('src', `./imagens/${contexto}.png`);
     switch (contexto) {
         case 'foco':
             titulo.innerHTML = `Otimize sua produtividade,<br>
@@ -101,11 +101,11 @@ function iniciarOuPausar() {
     somInciar.play();
     intervaloId = setInterval(contagemRegressiva, 1000);
     textBtIniciarPausar.textContent = 'Pausar';
-    imgBtIniciarPausar.setAttribute('src', '/imagens/pause.png');
+    imgBtIniciarPausar.setAttribute('src', './imagens/pause.png');
 }
 function zerar() {
     clearInterval(intervaloId);
-    imgBtIniciarPausar.setAttribute('src', '/imagens/play_arrow.png');
+    imgBtIniciarPausar.setAttribute('src', './imagens/play_arrow.png');
     intervaloId = null;
     tempoEmSegundos = 5
 }
