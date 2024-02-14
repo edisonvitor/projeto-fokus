@@ -18,7 +18,7 @@ const somBeep = new Audio('./sons/beep.mp3');
 const musica = new Audio('./sons/luna-rise-part-one.mp3');
 musica.loop = true;
 
-let tempoEmSegundos = 1500;
+let tempoEmSegundos = 0;
 let intervaloId = null;
 
 
@@ -31,6 +31,8 @@ inputMusicaFoco.addEventListener('change', () => {
 })
 
 function alterarContexto(contexto) {
+    textBtIniciarPausar.textContent = 'Começar';
+    zerar();
     mostrarTempo();
     botoes.forEach (function (contexto) {
         contexto.classList.remove('active');
@@ -81,7 +83,6 @@ const contagemRegressiva = () => {
     if (tempoEmSegundos <= 0) {
         somBeep.play();
         alert('Tempo Finalizado!');
-        textBtIniciarPausar.textContent = 'Começar';
         zerar();
         return;
     }
@@ -107,7 +108,6 @@ function zerar() {
     clearInterval(intervaloId);
     imgBtIniciarPausar.setAttribute('src', './imagens/play_arrow.png');
     intervaloId = null;
-    tempoEmSegundos = 5
 }
 
 function mostrarTempo() {
